@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: file-upload-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: uploader_db
+      POSTGRES_USER: uploaderuser
+      POSTGRES_PASSWORD: uploaderpass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uploaderuser -d uploader_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: api-file-upload-go
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE: postgres://uploaderuser:uploaderpass@db:5432/uploader_db
+      PORT: 80
+      UPLOAD_DIR: /app/uploads
+      MAX_FILE_SIZE: 10485760
+      ALLOWED_EXTENSIONS: .jpg,.jpeg,.png,.gif,.pdf,.txt,.doc,.docx
+      LOG_LEVEL: info
+      ENVIRONMENT: development
+    volumes:
+      - ./uploads:/app/uploads
+    ports:
+      - "80:80"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:

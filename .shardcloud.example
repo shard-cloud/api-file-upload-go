@@ -1,0 +1,7 @@
+DISPLAY_NAME=File Upload API
+ENTRYPOINT=bin/main
+MEMORY=1024
+VERSION=recommended
+SUBDOMAIN=file-upload-api
+START=go mod tidy && go build -o bin/main cmd/main.go && ./bin/main
+DESCRIPTION=API REST para upload e gerenciamento de arquivos com Gin e PostgreSQL
