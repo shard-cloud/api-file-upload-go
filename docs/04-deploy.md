@@ -175,13 +175,13 @@ Configure variáveis sensíveis no dashboard:
 1. Acesse configurações da aplicação
 2. Vá para **"Environment Variables"**
 3. Adicione suas variáveis:
-   ```
-   DATABASE=postgres://user:pass@host:port/db?ssl=true
-   PORT=80
-   UPLOAD_DIR=./uploads
-   MAX_FILE_SIZE=10485760
-   ALLOWED_EXTENSIONS=.jpg,.jpeg,.png,.gif,.pdf,.txt,.doc,.docx
-   ```
+```
+DATABASE=postgres://user:pass@host:port/db?ssl=true
+PORT=80
+UPLOAD_DIR=./uploads
+MAX_FILE_SIZE=10485760
+ALLOWED_EXTENSIONS=.jpg,.jpeg,.png,.gif,.pdf,.txt,.doc,.docx
+```
 
 ## 🔍 Monitoramento e logs
 
