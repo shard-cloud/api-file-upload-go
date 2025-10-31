@@ -1,5 +1,3 @@
-# Introdução
-
 A File Upload API é uma API REST para upload de arquivos com rastreamento de metadados em banco de dados. Ela permite gerenciar arquivos de forma eficiente via endpoints HTTP, com controle de tamanho, tipos permitidos e verificação de duplicatas.
 
 ## Funcionalidades

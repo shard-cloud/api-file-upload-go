@@ -1,5 +1,3 @@
-# Deploy na Shard Cloud
-
 ## 🚀 Deploy na Shard Cloud
 
 A Shard Cloud oferece hospedagem moderna e confiável para seus projetos Go. Siga este guia para fazer deploy da sua API de upload de arquivos em minutos.

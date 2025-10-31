@@ -2,7 +2,6 @@
   "title": "ShardCloud Template — API File Upload Go",
   "ref": "main",
   "items": [
-    { "file": "README.md", "label": "Visão Geral" },
     { "file": "01-introducao.md", "label": "Introdução" },
     { "file": "02-configuracao.md", "label": "Configuração" },
     { "file": "03-rodando.md", "label": "Rodando o Projeto" },

@@ -1,5 +1,3 @@
-# Configuração
-
 ## 🔐 Variáveis de Ambiente
 
 Crie um arquivo `.env` baseado no `env.example`:
